@@ -1,13 +1,13 @@
 {
   "expo": {
-    "name": "etnApp",
-    "slug": "etnApp",
+    "name": "wil-app",
+    "slug": "snack-444876b6-8501-49eb-9427-9272af783461",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/logo1.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
