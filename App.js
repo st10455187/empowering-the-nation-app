@@ -29,24 +29,24 @@ import CookingScreen from './components/cooking';
 import GardenScreen from './components/garden';
 import MinderScreen from './components/childminder';
 
-// About Screen Component
-
 // Home Screen Component
 
 const popularCourses = [
-  { id: '1', name: 'Landscaping', price: 'R1500', image: require('./assets/garden.png'), type: 'long' },
-  { id: '2', name: 'Cooking', price: 'R750', image: require('./assets/cooking.webp'), type: 'short' },
-  { id: '3', name: 'Sewing', price: 'R1500', image: require('./assets/sewing.webp'), type: 'long' },
+  { id: '1', name: 'Landscaping', price: 'R1500', duration: '6 months', image: require('./assets/garden.png'), type: 'long' },
+  { id: '2', name: 'Cooking', price: 'R750', price: 'R750', duration: '6 weeks', image: require('./assets/cooking.webp'), type: 'short' },
+  { id: '3', name: 'Sewing', price: 'R1500', price: 'R1500', duration: '6 months', image: require('./assets/sewing.webp'), type: 'long' },
 ];
 
 const HomeScreen = () => {
   const navigation = useNavigation();
 
   const handleCoursePress = (course) => {
-    if (course.type === 'short') {
-      navigation.navigate('6-weeks');
-    } else if (course.type === 'long') {
-      navigation.navigate('6-months');
+    if (course.id === '1') {
+      navigation.navigate('Landscaping');
+    } if (course.id === '2') {
+      navigation.navigate('Cooking');
+    } else if (course.id === '3') {
+      navigation.navigate('Sewing');
     }
   };
 
@@ -58,6 +58,7 @@ const HomeScreen = () => {
       <Image source={item.image} style={styles.courseImage} />
       <Text style={styles.courseName}>{item.name}</Text>
       <Text style={styles.coursePrice}>{item.price}</Text>
+      <Text style={styles.coursePrice}>{item.duration}</Text>
     </TouchableOpacity>
   );
 
@@ -143,10 +144,11 @@ const TabNavigator = () => (
           />
         );
       },
-      tabBarActiveTintColor: '#7F3DFF',  // Brighter purple when active
+      tabBarActiveTintColor: '#6117EB',  // Brighter purple when active
       tabBarInactiveTintColor: '#7F3DFF', // Same purple but with opacity when inactive
       tabBarStyle: {
-        backgroundColor: '#FFF',
+        backgroundColor: '#E8DFF9',
+        borderRadius: 10,
       },
     })}
   >
@@ -201,13 +203,6 @@ const DrawerNavigator = () => (
        }} 
     />
     <Drawer.Screen
-      name="Contact" 
-      component={ContactScreen} 
-      options={{ drawerIcon: ({ color, size }) => 
-      <Icon name="call-outline" size={size} color={color} /> 
-       }} 
-    />
-    <Drawer.Screen
       name="SixWeekCourses" 
       component={SixWeekCoursesScreen} 
       options={{ drawerIcon: ({ color, size }) => 
@@ -228,12 +223,19 @@ const DrawerNavigator = () => (
       <Icon name="calculator-outline" size={size} color={color} /> 
       }} 
     />
-    <Drawer.Screen
+        <Drawer.Screen
+      name="Contact" 
+      component={ContactScreen} 
+      options={{ drawerIcon: ({ color, size }) => 
+      <Icon name="call-outline" size={size} color={color} /> 
+       }} 
+    />
+        <Drawer.Screen
       name="About" 
       component={AboutScreen} 
       options={{ drawerIcon: ({ color, size }) => 
       <Icon name="information-circle-outline" size={size} color={color} /> 
-      }} 
+       }} 
     />
   </Drawer.Navigator>
 );
@@ -251,7 +253,7 @@ export default App;
 const styles = StyleSheet.create({
   container: { 
     flex: 1,
-    backgroundColor: '#F4F2FF', 
+    backgroundColor: '#E8DFF9', 
     padding: 20 
   },
   logo: {
@@ -280,12 +282,13 @@ const styles = StyleSheet.create({
   },
   title: { 
     fontSize: 42, 
-    fontWeight: 'bold', 
+    fontWeight: 'medium', 
     color: '#000',
     marginBottom: 20,
+    marginTop: -15,
   },
   descriptionBox: { 
-    backgroundColor: '#fff', 
+    backgroundColor: '#f5f0fc',
     borderRadius: 10, 
     padding: 15, 
     marginBottom: 20 
@@ -294,28 +297,29 @@ const styles = StyleSheet.create({
     fontSize: 15, 
     color: '#333',
     lineHeight: 20,
+    textAlign: 'center'
   },
   boldText: { 
     fontWeight: 'bold' 
   },
   popularCoursesTitle: { 
     fontSize: 18, 
-    fontWeight: 'bold', 
-    color: '#333', 
-    marginBottom: 15 
+    fontWeight: 'medium', 
+    color: 'black', 
+    marginBottom: 15,
+    marginTop: 20,
   },
-  popularCoursesList: { 
-    paddingLeft: 5 
-  },
+
   courseCard: { 
-    backgroundColor: '#fff', 
+    backgroundColor: '#f5f0fc', 
     borderRadius: 10, 
     padding: 10,
-    marginRight: 15,
-    width: 150,
+    width: 120,
+    marginRight: 10,
+    height: 200
   },
   courseImage: { 
-    width: 130, 
+    width: 100, 
     height: 100, 
     borderRadius: 10, 
     marginBottom: 10 
@@ -323,11 +327,11 @@ const styles = StyleSheet.create({
   courseName: { 
     fontSize: 16, 
     fontWeight: 'bold',
-    color: '#333' 
+    color: 'black' 
   },
   coursePrice: { 
     fontSize: 14, 
-    color: '#333' 
+    color: 'black' 
   },
   footer: {
     marginTop: 'auto', // Push to the bottom

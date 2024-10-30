@@ -12,15 +12,16 @@ const LandscapingScreen = ({ route, navigation }) => {
           source={require('../assets/logo1.png')}
           style={styles.logo} 
         />     
-        <Text style={styles.title}>Landscaping</Text>     
       </View>
 
-      <View style={styles.header2}>
-          <TouchableOpacity onPress={() => navigation.navigate('6-months')} style={styles.backButton}>
-            <Icon name="arrow-back" size={24} color="#000" />
-          </TouchableOpacity>
-          
-      </View> 
+      <View style={styles.header}>
+            <TouchableOpacity
+               onPress={() => navigation.navigate("6-months")}
+               style={styles.backButton}>
+               <Icon name="arrow-back" size={30} color="#000" />
+            </TouchableOpacity>
+            <Text style={styles.title}>Landscaping</Text>
+         </View>
 
       <View style={styles.purposeBox}>
         <Text style={styles.purposeText}>
@@ -51,7 +52,7 @@ const LandscapingScreen = ({ route, navigation }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F4F2FF',
+    backgroundColor: '#E8DFF9',
     padding: 20,
   },
   header1: {
@@ -61,20 +62,24 @@ const styles = StyleSheet.create({
     width: 100,
     height: 100,
     marginBottom: 10,
+    marginTop: 15
   },
   backButton: {
     marginRight: 10,         // Add some space between icon and title
   },
-  header2: {
-    flexDirection: 'row',    // Align icon and title in a row
-    alignItems: 'center',    // Vertically align items
+  header: {
+    flexDirection: "row",
+    alignItems: "center",
     marginBottom: 20,
-  },
-  title: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    color: '#000',
-  },
+ },
+ backButton: {
+    marginRight: 160,
+ },
+ title: {
+    fontSize: 32,
+    fontWeight: "medium",
+    color: "#000",
+ },
   purposeBox: {
     backgroundColor: '#FFF',
     borderRadius: 15,

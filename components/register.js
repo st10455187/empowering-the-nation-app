@@ -110,7 +110,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 16,
-    backgroundColor: '#f8f8f8',
+    backgroundColor: '#E8DFF9',
   },
   logo: {
     width: 100,  // Adjust width as necessary
@@ -118,32 +118,36 @@ const styles = StyleSheet.create({
     resizeMode: 'contain', // Ensures the image scales correctly
     marginBottom: 20,
     alignSelf: 'center',
+    marginTop: 15,
   }, 
   title: {
-    fontSize: 24,
-    fontWeight: 'bold',
+    fontSize: 42,
+    fontWeight: "medium",
+    color: "#000",
     marginBottom: 20,
-    textAlign: 'center',
+    marginLeft: 15,
   },
   label: {
     fontSize: 16,
-    marginBottom: 10,
-    color: '#333',
+    marginBottom: 5,
+    color: 'black',
   },
   input: {
-    borderWidth: 1,
-    borderColor: '#ccc',
+    backgroundColor: 'white',
     padding: 10,
     borderRadius: 5,
     marginBottom: 20,
     fontSize: 16,
+    width: 300,
+    height: 45
   },
   button: {
-    backgroundColor: '#7F3DFF',
-    padding: 15,
+    backgroundColor: '#a37af0',
     borderRadius: 5,
     alignItems: 'center',
-  },
+    width: 300,
+    height: 45,
+    justifyContent: 'center',},
   buttonText: {
     fontSize: 18,
     color: '#fff',
