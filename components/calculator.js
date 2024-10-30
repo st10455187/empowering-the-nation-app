@@ -86,7 +86,7 @@ const CalculateFeesScreen = () => {
       {/* Summary of the fees */}
       <View style={styles.summary}>
         <Text style={styles.summaryText}>SUBTOTAL</Text>
-        <Text style={styles.summaryValue}>R{subtotal.toFixed(2)}</Text>
+        <Text style={styles.summaryValue1}>R{subtotal.toFixed(2)}</Text>
       </View>
       <View style={styles.summary}>
         <Text style={styles.summaryText}>DISCOUNT</Text>
@@ -113,6 +113,7 @@ const styles = StyleSheet.create({
     resizeMode: 'contain', // Ensures the image scales correctly
     marginBottom: 20,
     alignSelf: 'center',
+    marginTop: 15,
   }, 
   title: {
     fontSize: 24,
@@ -171,6 +172,11 @@ const styles = StyleSheet.create({
   summaryValue: {
     fontSize: 16,
     fontWeight: 'bold',
+    color: 'red'
+  },
+  summaryValue1: {
+    fontSize: 16,
+    color: 'black'
   },
   grandTotalText: {
     fontSize: 18,
@@ -179,7 +185,7 @@ const styles = StyleSheet.create({
   grandTotalValue: {
     fontSize: 18,
     fontWeight: 'bold',
-    color: '#e74c3c',
+    color: 'black'
   },
 });
 
