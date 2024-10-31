@@ -32,7 +32,7 @@ import MinderScreen from './components/childminder';
 // Home Screen Component
 
 const popularCourses = [
-  { id: '1', name: 'Landscaping', price: 'R1500', duration: '6 months', image: require('./assets/garden.png'), type: 'long' },
+  { id: '1', name: 'Landscaping', price: 'R1500', duration: '6 months', image: require('./assets/Landscaping.jpg'), type: 'long' },
   { id: '2', name: 'Cooking', price: 'R750', price: 'R750', duration: '6 weeks', image: require('./assets/cooking.webp'), type: 'short' },
   { id: '3', name: 'Sewing', price: 'R1500', price: 'R1500', duration: '6 months', image: require('./assets/sewing.webp'), type: 'long' },
 ];
